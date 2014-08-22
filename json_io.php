@@ -25,8 +25,8 @@
 
 require '../header.php';
 
-require '../modeling/inc/process_includes.php';
-require '../modeling/inc/process_label.php';
+require '../database_modeling/inc/process_includes.php';
+require '../database_modeling/inc/process_label.php';
 
 $action = preg_replace('/\W/', '', $_GET['action']);
 
