@@ -92,7 +92,7 @@ foreach($list as $p)
 <head>
 <title>Re-Import from Backup(s)</title>
 <meta charset="utf-8" />
-<link href="../../../vendor/cmskit/lib-jquery-ui/themes/<?php echo end($_SESSION[$projectName]['config']['theme'])?>/jquery-ui.css" rel="stylesheet" />
+<link href="../../../vendor/cmskit/jquery-ui/themes/<?php echo end($_SESSION[$projectName]['config']['theme'])?>/jquery-ui.css" rel="stylesheet" />
 <link href="../../inc/css/<?php echo end($_SESSION[$projectName]['config']['theme'])?>/style.css" rel="stylesheet" />
 <style>
 body
@@ -148,7 +148,7 @@ a.active
 	font-weight: bold;
 }
 </style>
-<script src="../../../vendor/cmskit/lib-jquery-ui/jquery.min.js"></script>
+<script src="../../../vendor/cmskit/jquery-ui/jquery.min.js"></script>
 </head>
 <body>
 

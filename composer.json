@@ -15,7 +15,7 @@
   "require": {
         "php": ">=5.3.3",
         "cmskit/package-installer": "1.0.*@dev",
-        "cmskit/lib-jquery-ui": "dev-master",
-        "cmskit/lib-ace-editor": "dev-master"
+        "cmskit/jquery-ui": "dev-master",
+        "cmskit/ace-editor": "dev-master"
     }
 }

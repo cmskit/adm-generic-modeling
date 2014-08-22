@@ -38,7 +38,7 @@ if (!$json = json_decode($model, true)) exit('<h3>draft-model is corrupt!</h3>')
 <head>
 <title>cms-kit Generic Modeling</title>
 <meta charset="utf-8" />
-<link href="../../../vendor/cmskit/lib-jquery-ui/themes/<?php echo end($_SESSION[$projectName]['settings']['interface']['theme'])?>/jquery-ui.css" rel="stylesheet" />
+<link href="../../../vendor/cmskit/jquery-ui/themes/<?php echo end($_SESSION[$projectName]['settings']['interface']['theme'])?>/jquery-ui.css" rel="stylesheet" />
 <link href="../../templates/default/css/packed_<?php echo end($_SESSION[$projectName]['settings']['interface']['theme'])?>.css" rel="stylesheet" />
 
 <style>
@@ -101,11 +101,11 @@ iframe
 </style>
 
 
-<script src="../../../vendor/cmskit/lib-jquery-ui/jquery.min.js"></script>
+<script src="../../../vendor/cmskit/jquery-ui/jquery.min.js"></script>
 <script>$.uiBackCompat = false;</script>
-<script src="../../../vendor/cmskit/lib-jquery-ui/jquery-ui.js"></script>
+<script src="../../../vendor/cmskit/jquery-ui/jquery-ui.js"></script>
 
-<script>if(!window.JSON){document.writeln('<script src="../../../vendor/cmskit/lib-jquery-ui/plugins/json3.min.js"><\/script>')}</script>
+<script>if(!window.JSON){document.writeln('<script src="../../../vendor/cmskit/jquery-ui/plugins/json3.min.js"><\/script>')}</script>
 
 <script type="text/javascript">
 /* <![CDATA[ */
