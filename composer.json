@@ -1,5 +1,5 @@
 {
-    "name": "cms-kit admin wizard: generic modeling",
+    "name": "cmskit/admin-generic-modeling-wizard",
     "type": "library",
     "version": "0.5.0",
     "description": "Wizard to create generic models",
