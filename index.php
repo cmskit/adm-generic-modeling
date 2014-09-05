@@ -102,7 +102,7 @@ iframe
 
 <script src="../../../vendor/cmskit/jquery-ui/jquery.min.js"></script>
 <script>$.uiBackCompat = false;</script>
-<script src="../../../vendor/cmskit/jquery-ui/jquery-ui.js"></script>
+<script src="../../../vendor/cmskit/jquery-ui/jquery-ui.min.js"></script>
 
 <script>if(!window.JSON){document.writeln('<script src="../../../vendor/cmskit/jquery-ui/plugins/json3.min.js"><\/script>')}</script>
 
