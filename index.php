@@ -37,6 +37,7 @@ if (!$json = json_decode($model, true)) exit('<h3>draft-model is corrupt!</h3>')
 <head>
 <title>cms-kit Generic Modeling</title>
 <meta charset="utf-8" />
+
 <link href="../../../vendor/cmskit/jquery-ui/themes/<?php echo end($_SESSION[$projectName]['settings']['interface']['theme'])?>/jquery-ui.css" rel="stylesheet" />
 <link href="../../templates/default/css/packed_<?php echo end($_SESSION[$projectName]['settings']['interface']['theme'])?>.css" rel="stylesheet" />
 
@@ -100,9 +101,10 @@ iframe
 </style>
 
 
-<script src="../../../vendor/cmskit/jquery-ui/jquery.min.js"></script>
+<script type="text/javascript" src="../../../vendor/cmskit/jquery-ui/jquery.min.js"></script>
 <script>$.uiBackCompat = false;</script>
-<script src="../../../vendor/cmskit/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../../vendor/cmskit/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../database_modeling/inc/js/disallowedNames.js"></script>
 
 <script>if(!window.JSON){document.writeln('<script src="../../../vendor/cmskit/jquery-ui/plugins/json3.min.js"><\/script>')}</script>
 
@@ -133,7 +135,7 @@ $forbiddenTypes = array(
 							'MODEL',
 						);
 // load and decode datatypes from JS-Json
-$datatypes = json_decode(file_get_contents('../../inc/js/rules/datatypes.json'), true);
+$datatypes = json_decode(file_get_contents('../database_modeling/inc/datatypes.json'), true);
 
 // create the type-selector
 echo 'var typeSelect = \'<select onchange="checkTypeSelect(this)" name="type">';
