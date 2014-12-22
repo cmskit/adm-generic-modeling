@@ -22,6 +22,8 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ************************************************************************************/
 
+//exit('ERROR: hey');
+
 require '../header.php';
 
 require '../database_modeling/inc/process_includes.php';
@@ -45,7 +47,7 @@ require $draftpath;
 if (!$json = json_decode($model, true)) exit('draft-model is corrupt!');
 
 // load the datatypes (do we need this??)
-$datatypes = json_decode(file_get_contents('../../inc/js/rules/datatypes.json'), true);// load Datatypes
+$datatypes = json_decode(file_get_contents('../database_modeling/inc/datatypes.json'), true);// load Datatypes
 
 /**
  * 
@@ -55,6 +57,7 @@ function saveDraft()
 {
 
 $d1 = '<?php
+//
 $model = <<<EOD
 ';
 $d2 = '
@@ -83,7 +86,7 @@ switch ($action)
 																		
 													));
 			
-			file_put_contents($filepath, "<?php\n\$genericModel['".$objectName."'] = json_decode('".json_encode($json['objects'][$objectName])."', true);\n?>\n");
+			file_put_contents($filepath, "<?php\n\$genericModel['".$objectName."'] = json_decode('".json_encode($json['objects'][$objectName])."', true);\n");
 			chmod($filepath, 0776);
 			
 			
@@ -179,10 +182,11 @@ switch ($action)
 
 
             }
-			
-			$old = array_keys($genericObject[$objectName]);
+
+			$old = is_array($genericObject[$objectName]) ? array_keys($genericObject[$objectName]) : array();
 			$new = array_keys($myFields);
-			
+			//print_r($new);
+
 			// if changes regarding the amount/sort-order of the field-names were detected
 			if ($old !== $new)
 			{
