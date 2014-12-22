@@ -87,8 +87,8 @@ if(file_exists($fileName))
   <meta charset="utf-8" />
 
   <!-- json editor -->
-  <link rel="stylesheet" type="text/css" href="../../../wizards/jsoneditor/jsoneditor/jsoneditor.css" />
-  <script type="text/javascript" src="../../../wizards/jsoneditor/jsoneditor/jsoneditor.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../vendor/cmskit/jsoneditor/jsoneditor.min.css" />
+  <script type="text/javascript" src="../../../../vendor/cmskit/jsoneditor/jsoneditor.min.js"></script>
 
 
   <style type="text/css">
@@ -115,7 +115,7 @@ if(file_exists($fileName))
 <script type="text/javascript" >
 	// create the editor
 	var container = document.getElementById('jsoneditor');
-	var editor = new jsoneditor.JSONEditor(container);
+	var editor = new JSONEditor(container);
 	
 	var json = <?php echo $json?>;
 	
