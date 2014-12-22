@@ -18,6 +18,7 @@
         "cmskit/jquery-ui": "dev-master",
         "cmskit/ace-editor": "dev-master",
         "pclzip/pclzip": "dev-master",
+        "cmskit/admin-database-adminer": "dev-master",
         "cmskit/admin-database-modeling": "dev-master"
     }
 }
