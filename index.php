@@ -23,9 +23,18 @@
 ************************************************************************************/
 require '../header.php';
 
-require '../../inc/php/collectExtensionInfos.php';
+require '../database_modeling/inc/collectExtensionInfos.php';
 
 $genericFolder = '../../../projects/'.$projectName.'/objects/generic/';
+
+//  create folders/files if not exists
+if(!file_exists($genericFolder)) {
+	mkdir($genericFolder, 0777);
+	mkdir($genericFolder.'/backup', 0777);
+}
+if(!file_exists($genericFolder . '__draft.php')){
+	file_put_contents($genericFolder . '__draft.php', '<?php $model=\'{"objects":[]}\';');
+}
 
 require $genericFolder . '__draft.php';
 
@@ -123,9 +132,9 @@ echo "
 // available Wizards (backend/inc/php/collectExtensionInfos.php)
 $embeds = collectExtensionInfos($projectName);
 // print JS for available Wizards
-foreach($embeds['w'] as $k => $v)
+foreach($embeds['wizards'] as $k => $v)
 {
-	echo  "	wizards['$k'] = {" . implode(',', $v) . "}\n";
+	echo  "	wizards['$k'] = " . json_encode($v) . ";\n";
 }
 
 
@@ -263,10 +272,11 @@ $(function()
 			},
 			function(data)
 			{
-				if(data == 'ok')
-				{
+				if(data == 'ok'){
 					//$('#objectlist').append($('<li class="ui-state-default ui-selectee" data-name="'+n+'"><span class="ui-icon ui-icon-trash"></span><span class="label">'+n+'</span></li>'));
 					location.reload()
+				}else {
+					alert(data);
 				}
 			});
 		}
@@ -532,7 +542,7 @@ function showModel(name)
 		var q0 = confirm('<?php echo L('first_open_database_management_to_create_a_full_backup')?>?');
 		if (q0)
 		{
-			window.open('../db_admin/index.php?project='+project, 'DB-Admin');
+			window.open('../database_adminer/index.php?project='+project, 'DB-Admin');
 		}
 		else
 		{
